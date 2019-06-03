@@ -1,12 +1,28 @@
 .search-bar-container {
   width: 100%;
-  background: orange;
-}
-nav {
-  display: flex !important;
-  justify-content: space-between !important;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px black;
+  .fab {
+    padding: 1rem;
+  }
 }
 
-.navbar {
-  background: pink !important;
+.Navbar {
+  input {
+    border-radius: 3px;
+    padding: 0 1rem;
+    border: none;
+  }
+}
+
+.Nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.2rem;
+  h1 {
+    display: inline-block;
+  }
 }

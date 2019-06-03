@@ -19,9 +19,16 @@ class PostContainer extends React.Component {
   render() {
     return (
       <div className='post-container-container'>
-        <img src={this.props.postsInState.thumbnailUrl} />
-        <h1>{this.props.postsInState.username}</h1>
-        <img src={this.props.postsInState.imageUrl} />
+        <div className='container-header'>
+          <img
+            src={this.props.postsInState.thumbnailUrl}
+            className='post-thumbnail'
+          />
+          <p className='post-username'>{this.props.postsInState.username}</p>
+        </div>
+        <div className='post-image'>
+          <img src={this.props.postsInState.imageUrl} alt='this is my image' />
+        </div>
         {this.state.commentData.map(commentsOnPost => (
           <CommentSection commentsInState={commentsOnPost} />
         ))}

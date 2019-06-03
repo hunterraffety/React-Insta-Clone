@@ -8,6 +8,7 @@ import PostContainer from './components/PostContainer/PostContainer';
 import dummyData from './dummy-data';
 
 // styles
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
 class App extends React.Component {

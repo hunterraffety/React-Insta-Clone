@@ -1,23 +1,6 @@
 // react
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Input
-} from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Nav } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 // styles
@@ -36,22 +19,17 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className='search-bar-container'>
-        <Navbar color='light' className='Navbar' light expand='md'>
-          <Nav className='ml-auto nav'>
-            <Input placeholder='Search' />
-            <NavItem>
-              <NavLink href='/components/'>FA Icon</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href='https://github.com/reactstrap/reactstrap'>
-                FA Icon
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href='https://github.com/reactstrap/reactstrap'>
-                FA Icon
-              </NavLink>
-            </NavItem>
+        <Navbar className='Navbar'>
+          <Nav className='Nav'>
+            <div className='logo'>
+              <img src='#' alt='' />
+              <i class='fab fa-instagram' />
+              Insta-Clone
+            </div>
+            <h1>
+              <input type='text' placeholder='Search' />
+            </h1>
+            <h1>Ok2</h1>
           </Nav>
         </Navbar>
       </div>

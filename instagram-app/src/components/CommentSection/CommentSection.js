@@ -17,7 +17,9 @@ class CommentSection extends React.Component {
   render() {
     return (
       <div className='comment-section-container'>
-        <h1>{this.state.comments.text}</h1>
+        <div className='comment-text-container'>
+          <h1>{this.state.comments.text}</h1>
+        </div>
       </div>
     );
   }
