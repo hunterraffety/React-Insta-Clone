@@ -14,6 +14,7 @@ class CommentSection extends React.Component {
   }
 
   addNewComment = (e, i) => {
+    e.preventDefault();
     console.log(e, i);
   };
 
@@ -22,11 +23,19 @@ class CommentSection extends React.Component {
     return (
       <div className='comment-section-container'>
         {this.state.commentData.map(commentsOnPost => (
-          <div>
-            <h1>@{commentsOnPost.username}</h1>
-            <h1>{commentsOnPost.text}</h1>
+          <div className='comment-container'>
+            <span className='comment-username'>@{commentsOnPost.username}</span>
+            <span class='comment-text'>{commentsOnPost.text}</span>
           </div>
         ))}
+        <div className='form'>
+          <form onSubmit={this.addNewComment}>
+            <input type='text' placeholder='add a comment' />
+            <a href='#' onClick={this.addNewComment}>
+              Add
+            </a>
+          </form>
+        </div>
       </div>
     );
   }

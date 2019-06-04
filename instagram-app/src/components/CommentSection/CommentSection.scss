@@ -1,14 +1,39 @@
 .comment-section-container {
   padding: 0rem 1rem 1rem 1rem;
-  .comment-text-container {
-    margin-top: 1rem;
-    font-size: 1.4rem;
-    .comment-section-username {
-      font-weight: 800;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  .comment-container {
+    margin: 0.5rem 0rem;
+    .comment-username {
+      font-weight: 700;
+      padding: 1rem 0;
     }
-    h1 {
-      display: inline;
-      margin-left: 0.3rem;
+    .comment-text {
+      padding-left: 1rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+.form {
+  a {
+    color: black;
+  }
+  form {
+    width: 100%;
+    input[type='text'] {
+      margin: 1rem 0rem;
+      width: 60%;
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 1.6rem;
+      display: block;
+      &:focus {
+        outline: none;
+        border-radius: 5px;
+      }
+    }
+    a {
+      padding: 0 1.5rem;
     }
   }
 }
