@@ -8,14 +8,33 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      commentData: this.props.comments
+      commentData: this.props.comments,
+      id: '',
+      text: '',
+      username: 'testguy'
     };
-    console.log(`commentsection`, this.state.commentData);
   }
 
-  addNewComment = (e, i) => {
+  addNewComment = (e, id) => {
     e.preventDefault();
-    console.log(e, i);
+    console.log(`event`, e, `id`, e.target.id);
+    const newComment = {
+      text: this.state.text,
+      id: e.target.id,
+      username: 'testguy'
+    };
+    this.setState(prevState => {
+      return {
+        commentData: [...prevState.commentData, newComment]
+      };
+    });
+  };
+
+  handleChanges = e => {
+    console.log(e.target);
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   render() {
@@ -25,15 +44,18 @@ class CommentSection extends React.Component {
         {this.state.commentData.map(commentsOnPost => (
           <div className='comment-container'>
             <span className='comment-username'>@{commentsOnPost.username}</span>
-            <span class='comment-text'>{commentsOnPost.text}</span>
+            <span className='comment-text'>{commentsOnPost.text}</span>
           </div>
         ))}
         <div className='form'>
           <form onSubmit={this.addNewComment}>
-            <input type='text' placeholder='add a comment' />
-            <a href='#' onClick={this.addNewComment}>
-              Add
-            </a>
+            <input
+              placeholder='add a comment'
+              name='text'
+              onChange={this.handleChanges}
+              value={this.state.text}
+            />
+            <button>add comment</button>
           </form>
         </div>
       </div>

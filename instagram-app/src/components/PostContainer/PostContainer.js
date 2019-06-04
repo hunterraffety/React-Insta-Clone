@@ -28,7 +28,10 @@ const PostContainer = props => {
         <i className='far fa-comment' />
       </div>
       <div className='likes-container'>{props.postsInState.likes} likes</div>
-      <CommentSection comments={props.postsInState.comments} />
+      <CommentSection
+        comments={props.postsInState.comments}
+        id={props.postsInState.id}
+      />
       {/* {props.postsInState.comments.map(commentsOnPost => (
         <CommentSection
           commentsInState={commentsOnPost}

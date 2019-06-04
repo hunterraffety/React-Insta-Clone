@@ -20,8 +20,8 @@
   }
   form {
     width: 100%;
-    input[type='text'] {
-      margin: 1rem 0rem;
+    input {
+      margin: 1.5rem 0rem 0.5rem 0rem;
       width: 60%;
       padding: 1rem;
       border-radius: 5px;
@@ -31,6 +31,14 @@
         outline: none;
         border-radius: 5px;
       }
+    }
+    button {
+      display: block;
+      margin: 0.5rem 0.8rem;
+      background: none;
+      border-radius: 5px;
+      padding: 1rem;
+      border: 1px solid #efefef;
     }
     a {
       padding: 0 1.5rem;
