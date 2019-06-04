@@ -1,5 +1,6 @@
 // react
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // components
 import CommentSection from '../CommentSection/CommentSection';
@@ -8,6 +9,7 @@ import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.scss';
 
 const PostContainer = props => {
+  console.log(`props coming from PostContainer:`, props);
   return (
     <div className='post-container-container'>
       <div className='container-header'>
@@ -22,19 +24,17 @@ const PostContainer = props => {
         <img src={props.postsInState.imageUrl} alt='main post' />
       </div>
       <div className='post-reaction-container'>
-        <i class='far fa-heart' />
-        <i class='far fa-comment' />
+        <i className='far fa-heart' />
+        <i className='far fa-comment' />
       </div>
-      <div className='likes-container'> likes</div>
+      <div className='likes-container'>{props.postsInState.likes} likes</div>
       {props.postsInState.comments.map(commentsOnPost => (
-        <CommentSection commentsInState={commentsOnPost} />
+        <CommentSection
+          commentsInState={commentsOnPost}
+          key={commentsOnPost.id}
+        />
       ))}
-      <div class='post-timestamp'>2 hours ago</div>
-      <input
-        type='text'
-        className='post-add-comment'
-        placeholder='Add a Comment...'
-      />
+      <div className='post-timestamp'>2 hours ago</div>
     </div>
   );
 };

@@ -13,15 +13,21 @@ import './App.scss';
 
 class App extends React.Component {
   state = {
-    dummyData: dummyData
+    dummyData: []
   };
+
+  componentDidMount() {
+    this.setState({
+      dummyData: dummyData
+    });
+  }
 
   render() {
     return (
       <div className='App'>
         <SearchBar />
         {this.state.dummyData.map(postObjects => (
-          <PostContainer postsInState={postObjects} />
+          <PostContainer postsInState={postObjects} key={postObjects.id} />
         ))}
       </div>
     );

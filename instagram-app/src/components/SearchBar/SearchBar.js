@@ -1,6 +1,5 @@
 // react
 import React from 'react';
-// import { Navbar, Nav } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 // styles
@@ -12,7 +11,7 @@ const SearchBar = () => {
       <nav className='nav'>
         <div className='logo-container'>
           <div className='search-bar-icon'>
-            <i class='fab fa-instagram' />
+            <i className='fab fa-instagram' />
           </div>
           <div className='logo-img-container'>
             <img
@@ -26,9 +25,9 @@ const SearchBar = () => {
           <input type='text' className='search-input' placeholder='Search' />
         </div>
         <div className='search-actions-container'>
-          <i class='far fa-compass' />
-          <i class='far fa-heart' />
-          <i class='far fa-user' />
+          <i className='far fa-compass' />
+          <i className='far fa-heart' />
+          <i className='far fa-user' />
         </div>
       </nav>
       {/* <Navbar className='Navbar'>
