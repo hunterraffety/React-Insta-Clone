@@ -18,6 +18,9 @@ class CommentSection extends React.Component {
     return (
       <div className='comment-section-container'>
         <div className='comment-text-container'>
+          <span class='comment-section-username'>
+            @{this.state.comments.username}
+          </span>
           <h1>{this.state.comments.text}</h1>
         </div>
       </div>

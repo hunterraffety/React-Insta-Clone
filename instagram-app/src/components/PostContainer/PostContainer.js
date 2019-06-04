@@ -23,15 +23,25 @@ class PostContainer extends React.Component {
           <img
             src={this.props.postsInState.thumbnailUrl}
             className='post-thumbnail'
+            alt='profile pic'
           />
           <p className='post-username'>{this.props.postsInState.username}</p>
         </div>
         <div className='post-image'>
-          <img src={this.props.postsInState.imageUrl} alt='this is my image' />
+          <img src={this.props.postsInState.imageUrl} alt='main post' />
+        </div>
+        <div className='post-reaction-container'>
+          <i class='far fa-heart' />
+          <i class='far fa-comment' />
+        </div>
+        <div className='likes-container'>
+          {this.props.postsInState.likes} likes
         </div>
         {this.state.commentData.map(commentsOnPost => (
           <CommentSection commentsInState={commentsOnPost} />
         ))}
+        <div class='post-timestamp'>2 hours ago</div>
+        <div className='post-add-comment'>Add a Comment...</div>
       </div>
     );
   }
