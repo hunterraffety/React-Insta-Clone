@@ -41,7 +41,11 @@ class PostContainer extends React.Component {
           <CommentSection commentsInState={commentsOnPost} />
         ))}
         <div class='post-timestamp'>2 hours ago</div>
-        <div className='post-add-comment'>Add a Comment...</div>
+        <input
+          type='text'
+          className='post-add-comment'
+          placeholder='Add a Comment...'
+        />
       </div>
     );
   }
