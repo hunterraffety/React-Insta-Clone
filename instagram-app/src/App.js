@@ -12,19 +12,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      dummyData: dummyData
-    };
-  }
+  state = {
+    dummyData: dummyData
+  };
+
   render() {
     return (
       <div className='App'>
         <SearchBar />
-        {this.state.dummyData.map(postObjects => {
-          return <PostContainer postsInState={postObjects} />;
-        })}
+        {this.state.dummyData.map(postObjects => (
+          <PostContainer postsInState={postObjects} />
+        ))}
       </div>
     );
   }
