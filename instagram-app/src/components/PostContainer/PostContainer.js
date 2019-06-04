@@ -28,13 +28,13 @@ const PostContainer = props => {
         <i className='far fa-comment' />
       </div>
       <div className='likes-container'>{props.postsInState.likes} likes</div>
-      {props.postsInState.comments.map(commentsOnPost => (
+      <CommentSection comments={props.postsInState.comments} />
+      {/* {props.postsInState.comments.map(commentsOnPost => (
         <CommentSection
           commentsInState={commentsOnPost}
           key={commentsOnPost.id}
         />
-      ))}
-      <div className='post-timestamp'>2 hours ago</div>
+      ))} */}
     </div>
   );
 };
