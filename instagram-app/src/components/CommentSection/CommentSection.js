@@ -39,7 +39,7 @@ class CommentSection extends React.Component {
     return (
       <div className='comment-section-container'>
         {this.state.commentData.map(commentsOnPost => (
-          <div className='comment-container' key={commentsOnPost.id}>
+          <div className='comment-container' key={Math.random()}>
             <span className='comment-username'>@{commentsOnPost.username}</span>
             <span className='comment-text'>{commentsOnPost.text}</span>
           </div>

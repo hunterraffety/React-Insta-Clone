@@ -10,6 +10,7 @@ import dummyData from './dummy-data';
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
+import PostsPage from './components/PostContainer/PostsPage';
 
 class App extends React.Component {
   state = {
@@ -22,13 +23,22 @@ class App extends React.Component {
     });
   }
 
+  changeHandler = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  searchFilter = e => {};
+
   render() {
     return (
       <div className='App'>
-        <SearchBar posts={this.dummyData} />
-        {this.state.dummyData.map(postObjects => (
-          <PostContainer postsInState={postObjects} key={postObjects.id} />
-        ))}
+        <SearchBar
+          changeHandler={this.changeHandler}
+          newSearch={this.state.search}
+        />
+        <PostsPage posts={this.state.dummyData} />
       </div>
     );
   }

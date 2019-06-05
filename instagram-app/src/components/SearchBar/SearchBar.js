@@ -1,19 +1,11 @@
 // react
 import React from 'react';
 import PropTypes from 'prop-types';
-// import PropTypes from 'prop-types';
 
 // styles
 import './SearchBar.scss';
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchData: this.props.post
-    };
-  }
-
   render() {
     return (
       <div className='search-bar-container'>
@@ -31,7 +23,14 @@ class SearchBar extends React.Component {
             </div>
           </div>
           <div className='search-input-container'>
-            <input type='text' className='search-input' placeholder='Search' />
+            <input
+              type='text'
+              name='search'
+              onChange={this.props.changeHandler}
+              value={this.props.newSearch}
+              className='search-input'
+              placeholder='Search'
+            />
           </div>
           <div className='search-actions-container'>
             <i className='far fa-compass' />
