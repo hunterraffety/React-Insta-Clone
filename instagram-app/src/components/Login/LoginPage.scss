@@ -1,0 +1,34 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 75%;
+    text-align: center;
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      font-size: 1.8rem;
+      font-weight: 500;
+      input[type='text'],
+      input[type='password'] {
+        margin: 3rem;
+        padding: 1rem;
+        display: block;
+        border: 3px solid #efefef;
+        border-radius: 7px;
+      }
+      button {
+      }
+    }
+  }
+}
