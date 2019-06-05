@@ -12,7 +12,6 @@ class LoginPage extends React.Component {
   }
 
   submitLogin = e => {
-    console.log(e);
     if (localStorage.getItem('username')) {
       localStorage.removeItem('username');
       this.setState({

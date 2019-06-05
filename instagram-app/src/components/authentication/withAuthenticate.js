@@ -11,8 +11,27 @@ const withAuthenticate = PostsPage => LoginPage =>
         isLoggedIn: false
       };
     }
+
+    componentDidUpdate() {
+      this.setState(() => {
+        if (localStorage.getItem('username')) {
+          this.setState({
+            isLoggedIn: true
+          });
+        } else {
+          this.setState({
+            isLoggedIn: false
+          });
+        }
+      });
+    }
+
     render() {
-      return <PostsPage />;
+      if (localStorage.getItem('username')) {
+        return <PostsPage />;
+      } else {
+        return <LoginPage />;
+      }
     }
   };
 

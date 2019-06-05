@@ -33,7 +33,7 @@ class PostsPage extends React.Component {
           {this.state.dummyData.map(postObjects => (
             <PostContainer postsInState={postObjects} key={postObjects.id} />
           ))}
-        </div>{' '}
+        </div>
       </div>
     );
   }
