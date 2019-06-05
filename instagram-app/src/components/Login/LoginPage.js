@@ -7,13 +7,23 @@ class LoginPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      default: []
+      username: ''
     };
   }
 
   submitLogin = e => {
-    e.preventDefault();
     console.log(e);
+    if (localStorage.getItem('username')) {
+      localStorage.removeItem('username');
+      this.setState({
+        username: ''
+      });
+    } else {
+      localStorage.setItem('username', 'hunter');
+      this.setState({
+        username: 'hunter'
+      });
+    }
   };
 
   render() {
@@ -21,9 +31,9 @@ class LoginPage extends React.Component {
       <div className='login-container'>
         <div className='form-container'>
           <form className='login-form' onSubmit={this.submitLogin}>
-            <label htmlFor='Username'>Username</label>
+            <label htmlFor='username'>Username</label>
             <input type='text' name='username' />
-            <label htmlFor='Username'>Password</label>
+            <label htmlFor='password'>Password</label>
             <input type='password' name='password' />
             <button onSubmit={this.submitLogin}>Log In</button>
           </form>

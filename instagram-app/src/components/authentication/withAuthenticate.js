@@ -1,10 +1,19 @@
 import React from 'react';
 
-const withAuthenticate = FirstComponent =>
+import PostsPage from '../PostContainer/PostsPage';
+import LoginPage from '../Login/LoginPage';
+
+const withAuthenticate = PostsPage => LoginPage =>
   class extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        isLoggedIn: false
+      };
+    }
     render() {
-      return <FirstComponent />;
+      return <PostsPage />;
     }
   };
 
-export default withAuthenticate;
+export default withAuthenticate(PostsPage)(LoginPage);
