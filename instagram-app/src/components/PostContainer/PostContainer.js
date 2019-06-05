@@ -4,29 +4,20 @@ import PropTypes from 'prop-types';
 
 // components
 import CommentSection from '../CommentSection/CommentSection';
+import Likes from '../Likes/Likes';
 
 // styles
 import './PostContainer.scss';
 
 class PostContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      postsInState: props.postsInState,
-      likes: ''
-    };
-  }
+  state = {
+    likes: this.props.postsInState.likes
+  };
 
-  addLike = e => {
-    e.preventDefault();
-    const newLike = {
-      likes: this.props.postsInState.likes + 1,
-      id: this.props.postsInState.key
-    };
-    this.setState(() => {
-      return {
-        postsInState: [newLike]
-      };
+  addLike = () => {
+    let likes = this.state.likes + 1;
+    this.setState({
+      likes
     });
   };
 
@@ -37,9 +28,14 @@ class PostContainer extends React.Component {
   //   });
   // };
 
-  addComment = e => {
-    console.log(`addComment`, e);
-  };
+  // addLike = e => {
+  //   console.log(`addLike`, e, this.state.likes);
+  // };
+
+  // addComment = e => {
+  //   e.preventDefault();
+  //   console.log(`addComment`, e);
+  // };
 
   render() {
     console.log(`PostContainer: this.props inside render()`, this.props);
@@ -56,20 +52,13 @@ class PostContainer extends React.Component {
         <div className='post-image'>
           <img src={this.props.postsInState.imageUrl} alt='main post' />
         </div>
-        <div className='post-reaction-container'>
-          <i
-            className='far fa-heart'
-            onClick={this.addLike}
-            id={this.props.postsInState.id}
-          />
-          <i className='far fa-comment' onClick={this.addComment} />
-        </div>
+
         <div className='likes-container'>
-          {this.props.postsInState.likes} likes
+          <Likes addLike={this.addLike} likes={this.state.likes} />
         </div>
         <CommentSection
           comments={this.props.postsInState.comments}
-          id={this.props.postsInState.id}
+          id={this.props.postsInState.key}
         />
         {/* {props.postsInState.comments.map(commentsOnPost => (
         <CommentSection
