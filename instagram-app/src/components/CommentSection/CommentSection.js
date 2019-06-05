@@ -15,9 +15,8 @@ class CommentSection extends React.Component {
     };
   }
 
-  addNewComment = (e, id) => {
+  addNewComment = e => {
     e.preventDefault();
-    console.log(`event`, e, `id`, e.target.id);
     const newComment = {
       text: this.state.text,
       id: e.target.id,
@@ -32,14 +31,12 @@ class CommentSection extends React.Component {
   };
 
   handleChanges = e => {
-    console.log(e.target);
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
   render() {
-    console.log(`comments this.props in render()`, this.props);
     return (
       <div className='comment-section-container'>
         {this.state.commentData.map(commentsOnPost => (

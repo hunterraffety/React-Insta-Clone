@@ -9,28 +9,40 @@ import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.scss';
 
 class PostContainer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      postsInState: []
+      postsInState: props.postsInState,
+      likes: ''
     };
   }
 
-  // addLike = e => {
-  //   e.preventDefault();
-  //   console.log(e);
-  // };
-
   addLike = e => {
-    console.log(e);
+    e.preventDefault();
+    const newLike = {
+      likes: this.props.postsInState.likes + 1,
+      id: this.props.postsInState.key
+    };
+    this.setState(() => {
+      return {
+        postsInState: [newLike]
+      };
+    });
   };
 
+  // addLike = e => {
+  //   console.log(`addLike`, e, e.target.value, e.target.name);
+  //   this.setState({
+  //     likes: [...+ 1
+  //   });
+  // };
+
   addComment = e => {
-    console.log(e);
+    console.log(`addComment`, e);
   };
 
   render() {
-    console.log(`this.props inside render()`, this.props);
+    console.log(`PostContainer: this.props inside render()`, this.props);
     return (
       <div className='post-container-container'>
         <div className='container-header'>
@@ -45,8 +57,12 @@ class PostContainer extends React.Component {
           <img src={this.props.postsInState.imageUrl} alt='main post' />
         </div>
         <div className='post-reaction-container'>
-          <i className='far fa-heart' onClick={this.addLike} />
-          <i className='far fa-comment' onClick={this.addLike} />
+          <i
+            className='far fa-heart'
+            onClick={this.addLike}
+            id={this.props.postsInState.id}
+          />
+          <i className='far fa-comment' onClick={this.addComment} />
         </div>
         <div className='likes-container'>
           {this.props.postsInState.likes} likes
