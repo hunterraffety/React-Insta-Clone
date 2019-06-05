@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <SearchBar />
+        <SearchBar posts={this.dummyData} />
         {this.state.dummyData.map(postObjects => (
           <PostContainer postsInState={postObjects} key={postObjects.id} />
         ))}

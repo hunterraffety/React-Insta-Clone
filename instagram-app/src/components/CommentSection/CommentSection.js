@@ -10,8 +10,7 @@ class CommentSection extends React.Component {
     this.state = {
       commentData: this.props.comments,
       id: Date.now(),
-      text: '',
-      username: 'testguy'
+      text: ''
     };
   }
 
@@ -40,7 +39,7 @@ class CommentSection extends React.Component {
     return (
       <div className='comment-section-container'>
         {this.state.commentData.map(commentsOnPost => (
-          <div className='comment-container'>
+          <div className='comment-container' key={commentsOnPost.id}>
             <span className='comment-username'>@{commentsOnPost.username}</span>
             <span className='comment-text'>{commentsOnPost.text}</span>
           </div>

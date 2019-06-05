@@ -1,36 +1,45 @@
 // react
 import React from 'react';
+import PropTypes from 'prop-types';
 // import PropTypes from 'prop-types';
 
 // styles
 import './SearchBar.scss';
 
-const SearchBar = () => {
-  return (
-    <div className='search-bar-container'>
-      <nav className='nav'>
-        <div className='logo-container'>
-          <div className='search-bar-icon'>
-            <i className='fab fa-instagram' />
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchData: this.props.post
+    };
+  }
+
+  render() {
+    return (
+      <div className='search-bar-container'>
+        <nav className='nav'>
+          <div className='logo-container'>
+            <div className='search-bar-icon'>
+              <i className='fab fa-instagram' />
+            </div>
+            <div className='logo-img-container'>
+              <img
+                src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png'
+                alt='instagram'
+                className='logo-img'
+              />
+            </div>
           </div>
-          <div className='logo-img-container'>
-            <img
-              src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png'
-              alt='instagram'
-              className='logo-img'
-            />
+          <div className='search-input-container'>
+            <input type='text' className='search-input' placeholder='Search' />
           </div>
-        </div>
-        <div className='search-input-container'>
-          <input type='text' className='search-input' placeholder='Search' />
-        </div>
-        <div className='search-actions-container'>
-          <i className='far fa-compass' />
-          <i className='far fa-heart' />
-          <i className='far fa-user' />
-        </div>
-      </nav>
-      {/* <Navbar className='Navbar'>
+          <div className='search-actions-container'>
+            <i className='far fa-compass' />
+            <i className='far fa-heart' />
+            <i className='far fa-user' />
+          </div>
+        </nav>
+        {/* <Navbar className='Navbar'>
           <Nav className='Nav'>
             <div className='logo-container'>
               <div className='icon'>
@@ -54,9 +63,10 @@ const SearchBar = () => {
             </div>
           </Nav>
         </Navbar> */}
-    </div>
-  );
-};
+      </div>
+    );
+  }
+}
 
 export default SearchBar;
 
@@ -69,3 +79,12 @@ export default SearchBar;
 //   expand: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 //   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 // };
+
+SearchBar.propTypes = {
+  searchData: PropTypes.shape({
+    thumbnailUrl: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    likes: PropTypes.number.isRequired
+  })
+};

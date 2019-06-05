@@ -38,7 +38,6 @@ class PostContainer extends React.Component {
   // };
 
   render() {
-    console.log(`PostContainer: this.props inside render()`, this.props);
     return (
       <div className='post-container-container'>
         <div className='container-header'>
