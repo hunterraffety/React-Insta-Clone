@@ -1,4 +1,4 @@
 [build]
-base = "myapp/"
-publish = "myapp/build/"
+base = "instagram-app/"
+publish = "instagram-app/build/"
 command = "yarn build"
