@@ -9,7 +9,7 @@ class CommentSection extends React.Component {
     super(props);
     this.state = {
       commentData: this.props.comments,
-      id: '',
+      id: Date.now(),
       text: '',
       username: 'testguy'
     };
@@ -21,11 +21,12 @@ class CommentSection extends React.Component {
     const newComment = {
       text: this.state.text,
       id: e.target.id,
-      username: 'testguy'
+      username: 'hunter'
     };
     this.setState(prevState => {
       return {
-        commentData: [...prevState.commentData, newComment]
+        commentData: [...prevState.commentData, newComment],
+        text: ''
       };
     });
   };
@@ -38,7 +39,7 @@ class CommentSection extends React.Component {
   };
 
   render() {
-    console.log(`this.props in render()`, this.props);
+    console.log(`comments this.props in render()`, this.props);
     return (
       <div className='comment-section-container'>
         {this.state.commentData.map(commentsOnPost => (
@@ -54,6 +55,7 @@ class CommentSection extends React.Component {
               name='text'
               onChange={this.handleChanges}
               value={this.state.text}
+              id={this.state.id}
             />
             <button>add comment</button>
           </form>
@@ -65,11 +67,19 @@ class CommentSection extends React.Component {
 
 export default CommentSection;
 
-{
-  /* {props.postsInState.comments.map(commentsOnPost => (
-        <CommentSection
-          commentsInState={commentsOnPost}
-          key={commentsOnPost.id}
-        />
-      ))} */
-}
+// {
+//   /* {props.postsInState.comments.map(commentsOnPost => (
+//         <CommentSection
+//           commentsInState={commentsOnPost}
+//           key={commentsOnPost.id}
+//         />
+//       ))} */
+// }
+
+CommentSection.propTypes = {
+  commentData: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
+  })
+};
