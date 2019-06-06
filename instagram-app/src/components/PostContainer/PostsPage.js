@@ -4,11 +4,14 @@ import SearchBar from '../SearchBar/SearchBar';
 import dummyData from '../../dummy-data';
 
 class PostsPage extends React.Component {
-  state = {
-    dummyData: [],
-    search: '',
-    filteredPosts: []
-  };
+  constructor() {
+    super();
+    this.state = {
+      dummyData: [],
+      search: '',
+      filteredPosts: []
+    };
+  }
 
   changeHandler = e => {
     this.setState({
@@ -36,6 +39,7 @@ class PostsPage extends React.Component {
           changeHandler={this.changeHandler}
           newSearch={this.state.search}
           searchFilter={this.searchFilter}
+          data={this.state.dummyData}
         />
         <div className='posts-container'>
           <PostContainer

@@ -3,19 +3,30 @@ import PropTypes from 'prop-types';
 
 import './Likes.scss';
 
-const Likes = props => {
-  console.log(props);
-  return (
-    <div className='post-reaction-container'>
-      <i className='far fa-heart' onClick={props.addLike} id={props.id} />
-      <i className='far fa-comment' onClick={props.addComment} id={props.id} />
-      <div className='likes-display'>
-        <h1>{props.likes} likes</h1>
-      </div>
-    </div>
-  );
-};
+class Likes extends React.Component {
+  state = {
+    likes: this.props.likes
+  };
 
+  addLike = () => {
+    let likes = this.state.likes + 1;
+    this.setState({
+      likes
+    });
+  };
+
+  render() {
+    return (
+      <div className='post-reaction-container'>
+        <i className='far fa-heart' onClick={this.addLike} />
+        <i className='far fa-comment' onClick={this.addComment} />
+        <div className='likes-display'>
+          <h1>{this.state.likes} likes</h1>
+        </div>
+      </div>
+    );
+  }
+}
 // work on logic to toggle icon
 
 export default Likes;

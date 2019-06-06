@@ -10,22 +10,11 @@ import Likes from '../Likes/Likes';
 import './PostContainer.scss';
 
 class PostContainer extends React.Component {
-  state = {
-    likes: this.props.data.likes
-  };
-
-  addLike = () => {
-    let likes = this.state.likes + 1;
-    this.setState({
-      likes
-    });
-  };
-
   render() {
     return (
       <div className='post-container-container'>
         {this.props.filteredPosts.length === 0
-          ? this.props.data.map(post => {
+          ? this.props.postsInState.map(post => {
               return (
                 <div className='test'>
                   <div className='container-header'>
@@ -40,7 +29,11 @@ class PostContainer extends React.Component {
                     <img src={post.imageUrl} alt='main post' />
                   </div>
                   <div className='likes-container'>
-                    <Likes addLike={this.addLike} likes={post.likes} />
+                    <Likes
+                      addLike={this.addLike}
+                      likes={post.likes}
+                      id={post.id}
+                    />
                   </div>
                   <CommentSection comments={post.comments} id={post.key} />
                 </div>
