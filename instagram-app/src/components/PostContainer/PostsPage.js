@@ -6,7 +6,8 @@ import dummyData from '../../dummy-data';
 class PostsPage extends React.Component {
   state = {
     dummyData: [],
-    search: ''
+    search: '',
+    filteredPosts: []
   };
 
   changeHandler = e => {
@@ -15,23 +16,36 @@ class PostsPage extends React.Component {
     });
   };
 
-  searchFilter = e => {};
-
   componentDidMount() {
     this.setState({
       dummyData: dummyData
     });
   }
+
+  searchFilter = e => {
+    const filtered = this.state.dummyData.filter(post =>
+      post.username.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    this.setState({ filteredPosts: filtered });
+  };
+
   render() {
     return (
       <div className='App'>
         <SearchBar
           changeHandler={this.changeHandler}
           newSearch={this.state.search}
+          searchFilter={this.searchFilter}
         />
         <div className='posts-container'>
           {this.state.dummyData.map(postObjects => (
-            <PostContainer postsInState={postObjects} key={postObjects.id} />
+            <PostContainer
+              postsInState={postObjects}
+              data={this.state.dummyData}
+              key={postObjects.id}
+              searchFilter={this.searchFilter}
+              filteredPosts={this.state.filteredPosts}
+            />
           ))}
         </div>
       </div>

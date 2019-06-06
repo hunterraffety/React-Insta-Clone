@@ -40,31 +40,55 @@ class PostContainer extends React.Component {
   render() {
     return (
       <div className='post-container-container'>
-        <div className='container-header'>
-          <img
-            src={this.props.postsInState.thumbnailUrl}
-            className='post-thumbnail'
-            alt='profile pic'
-          />
-          <p className='post-username'>{this.props.postsInState.username}</p>
-        </div>
-        <div className='post-image'>
-          <img src={this.props.postsInState.imageUrl} alt='main post' />
-        </div>
-
-        <div className='likes-container'>
-          <Likes addLike={this.addLike} likes={this.state.likes} />
-        </div>
-        <CommentSection
-          comments={this.props.postsInState.comments}
-          id={this.props.postsInState.key}
-        />
-        {/* {props.postsInState.comments.map(commentsOnPost => (
-        <CommentSection
-          commentsInState={commentsOnPost}
-          key={commentsOnPost.id}
-        />
-      ))} */}
+        {this.props.filteredPosts.length === 0
+          ? this.props.data.map(post => {
+              return (
+                <div className='test'>
+                  <div className='container-header'>
+                    <img
+                      src={post.thumbnailUrl}
+                      className='post-thumbnail'
+                      alt='profile pic'
+                    />
+                    <p className='post-username'>{post.username}</p>
+                  </div>
+                  <div className='post-image'>
+                    <img src={post.imageUrl} alt='main post' />
+                  </div>
+                  <div className='likes-container'>
+                    <Likes addLike={this.addLike} likes={this.state.likes} />
+                  </div>
+                  <CommentSection
+                    comments={this.props.postsInState.comments}
+                    id={this.props.postsInState.key}
+                  />
+                </div>
+              );
+            })
+          : this.props.filteredPosts.map(post => {
+              return (
+                <div className='test'>
+                  <div className='container-header'>
+                    <img
+                      src={post.thumbnailUrl}
+                      className='post-thumbnail'
+                      alt='profile pic'
+                    />
+                    <p className='post-username'>{post.username}</p>
+                  </div>
+                  <div className='post-image'>
+                    <img src={post.imageUrl} alt='main post' />
+                  </div>
+                  <div className='likes-container'>
+                    <Likes addLike={this.addLike} likes={this.state.likes} />
+                  </div>
+                  <CommentSection
+                    comments={this.props.postsInState.comments}
+                    id={this.props.postsInState.key}
+                  />
+                </div>
+              );
+            })}
       </div>
     );
   }

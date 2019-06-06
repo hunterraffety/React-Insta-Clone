@@ -24,12 +24,11 @@ class SearchBar extends React.Component {
           </div>
           <div className='search-input-container'>
             <input
-              type='text'
-              name='search'
-              onChange={this.props.changeHandler}
-              value={this.props.newSearch}
               className='search-input'
+              name='search'
+              onChange={this.props.searchFilter}
               placeholder='Search'
+              type='text'
             />
           </div>
           <div className='search-actions-container'>
