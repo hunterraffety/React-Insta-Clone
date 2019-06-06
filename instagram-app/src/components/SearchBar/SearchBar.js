@@ -1,14 +1,68 @@
 // react
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 
 // styles
-import './SearchBar.scss';
+// import './SearchBar.scss';
+
+// styled components
+const Header = styled.header`
+  width: 100%;
+  text-align: center;
+  display: flex;
+  background: #F3FCFF
+  justify-content: center;
+  border-bottom: 1px solid #D1DCE8;
+  nav {
+    padding-bottom: 1rem;
+    width: 55%;
+    justify-content: space-evenly;
+    align-items: center;
+    .logo-container,
+    .search-input-container,
+    .search-actions-container {
+      text-align: center;
+      width: 30%;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo-img-container {
+      padding: 0.5rem;
+      width: 25%;
+      border-left: 1px solid gray;
+    }
+    .search-bar-icon {
+      padding: 0.5rem;
+    }
+    input {
+      text-align: center;
+      padding: 0.3rem;
+      border-radius: 3px;
+      border: 1px solid #f3f3f3;
+    }
+  }
+  .logo-img {
+    height: auto;
+    align-items: center;
+    width: 100%;
+  }
+  i {
+    font-size: 3.2rem;
+  }
+  .search-actions-container {
+    i {
+      padding: 1rem;
+    }
+  }
+`;
 
 class SearchBar extends React.Component {
   render() {
     return (
-      <div className='search-bar-container'>
+      <Header>
         <nav className='nav'>
           <div className='logo-container'>
             <div className='search-bar-icon'>
@@ -61,7 +115,7 @@ class SearchBar extends React.Component {
             </div>
           </Nav>
         </Navbar> */}
-      </div>
+      </Header>
     );
   }
 }
