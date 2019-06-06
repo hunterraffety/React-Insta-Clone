@@ -8,7 +8,7 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      commentData: this.props.comments,
+      comments: [],
       id: Date.now(),
       text: ''
     };
@@ -23,7 +23,7 @@ class CommentSection extends React.Component {
     };
     this.setState(prevState => {
       return {
-        commentData: [...prevState.commentData, newComment],
+        comments: [...prevState.comments, newComment],
         text: ''
       };
     });
@@ -38,7 +38,7 @@ class CommentSection extends React.Component {
   render() {
     return (
       <div className='comment-section-container'>
-        {this.state.commentData.map(commentsOnPost => (
+        {this.state.comments.map(commentsOnPost => (
           <div className='comment-container' key={Math.random()}>
             <span className='comment-username'>@{commentsOnPost.username}</span>
             <span className='comment-text'>{commentsOnPost.text}</span>

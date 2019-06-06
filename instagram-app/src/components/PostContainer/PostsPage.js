@@ -38,14 +38,12 @@ class PostsPage extends React.Component {
           searchFilter={this.searchFilter}
         />
         <div className='posts-container'>
-          {this.state.dummyData.map(postObjects => (
-            <PostContainer
-              postsInState={postObjects}
-              data={this.state.dummyData}
-              searchFilter={this.searchFilter}
-              filteredPosts={this.state.filteredPosts}
-            />
-          ))}
+          <PostContainer
+            postsInState={this.state.dummyData}
+            data={this.state.dummyData}
+            searchFilter={this.searchFilter}
+            filteredPosts={this.state.filteredPosts}
+          />
         </div>
       </div>
     );
