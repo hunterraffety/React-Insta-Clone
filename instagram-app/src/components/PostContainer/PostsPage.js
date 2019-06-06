@@ -42,7 +42,6 @@ class PostsPage extends React.Component {
             <PostContainer
               postsInState={postObjects}
               data={this.state.dummyData}
-              key={postObjects.id}
               searchFilter={this.searchFilter}
               filteredPosts={this.state.filteredPosts}
             />
