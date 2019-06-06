@@ -1,11 +1,14 @@
 .post-container-container {
-  margin: 3rem auto;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  padding: 0rem 0rem;
-  border: 1px solid #f1f1f1;
-  border-radius: 3px;
+  .test {
+    margin: 3rem auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0rem;
+    background: #ffffff;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+  }
   img {
     max-width: 100%;
   }
@@ -14,8 +17,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 1.5rem;
-    background: #d1dce8;
+    background: #e6f4ff;
     img {
       width: 5%;
       margin: 1rem;

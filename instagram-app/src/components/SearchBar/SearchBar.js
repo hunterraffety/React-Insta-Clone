@@ -9,11 +9,13 @@ import styled, { css } from 'styled-components';
 // styled components
 const Header = styled.header`
   width: 100%;
-  text-align: center;
   display: flex;
-  background: #F3FCFF
+  background: #e6f4ff;
   justify-content: center;
-  border-bottom: 1px solid #D1DCE8;
+  border-bottom: 1px solid #d1dce8;
+`;
+
+const LogoHeader = styled.div`
   nav {
     padding-bottom: 1rem;
     width: 55%;
@@ -63,58 +65,36 @@ class SearchBar extends React.Component {
   render() {
     return (
       <Header>
-        <nav className='nav'>
-          <div className='logo-container'>
-            <div className='search-bar-icon'>
-              <i className='fab fa-instagram' />
-            </div>
-            <div className='logo-img-container'>
-              <img
-                src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png'
-                alt='instagram'
-                className='logo-img'
-              />
-            </div>
-          </div>
-          <div className='search-input-container'>
-            <input
-              className='search-input'
-              name='search'
-              onChange={this.props.searchFilter}
-              placeholder='Search'
-              type='text'
-            />
-          </div>
-          <div className='search-actions-container'>
-            <i className='far fa-compass' />
-            <i className='far fa-heart' />
-            <i className='far fa-user' />
-          </div>
-        </nav>
-        {/* <Navbar className='Navbar'>
-          <Nav className='Nav'>
+        <LogoHeader>
+          <nav className='nav'>
             <div className='logo-container'>
-              <div className='icon'>
-                <i class='fab fa-instagram' />
+              <div className='search-bar-icon'>
+                <i className='fab fa-instagram' />
               </div>
-              <div className='imgimg'>
+              <div className='logo-img-container'>
                 <img
                   src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png'
                   alt='instagram'
-                  className='logo'
+                  className='logo-img'
                 />
               </div>
             </div>
-            <div className='search-bar-input'>
-              <h1>
-                <input type='text' placeholder='Search' />
-              </h1>
+            <div className='search-input-container'>
+              <input
+                className='search-input'
+                name='search'
+                onChange={this.props.searchFilter}
+                placeholder='Search'
+                type='text'
+              />
             </div>
-            <div className='search-bar-icons'>
-              <h1>Ok2</h1>
+            <div className='search-actions-container'>
+              <i className='far fa-compass' />
+              <i className='far fa-heart' />
+              <i className='far fa-user' />
             </div>
-          </Nav>
-        </Navbar> */}
+          </nav>
+        </LogoHeader>
       </Header>
     );
   }
