@@ -42,10 +42,7 @@ class PostContainer extends React.Component {
                   <div className='likes-container'>
                     <Likes addLike={this.addLike} likes={post.likes} />
                   </div>
-                  <CommentSection
-                    comments={this.props.postsInState.comments}
-                    id={this.props.postsInState.key}
-                  />
+                  <CommentSection comments={post.comments} id={post.key} />
                 </div>
               );
             })

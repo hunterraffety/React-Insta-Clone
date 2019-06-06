@@ -8,7 +8,7 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: [],
+      comments: props.comments,
       id: Date.now(),
       text: ''
     };
@@ -36,6 +36,7 @@ class CommentSection extends React.Component {
   };
 
   render() {
+    console.log(this.state.comments);
     return (
       <div className='comment-section-container'>
         {this.state.comments.map(commentsOnPost => (
