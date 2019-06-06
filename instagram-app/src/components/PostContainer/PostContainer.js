@@ -11,7 +11,7 @@ import './PostContainer.scss';
 
 class PostContainer extends React.Component {
   state = {
-    likes: this.props.postsInState.likes
+    likes: this.props.data.likes
   };
 
   addLike = () => {
@@ -20,22 +20,6 @@ class PostContainer extends React.Component {
       likes
     });
   };
-
-  // addLike = e => {
-  //   console.log(`addLike`, e, e.target.value, e.target.name);
-  //   this.setState({
-  //     likes: [...+ 1
-  //   });
-  // };
-
-  // addLike = e => {
-  //   console.log(`addLike`, e, this.state.likes);
-  // };
-
-  // addComment = e => {
-  //   e.preventDefault();
-  //   console.log(`addComment`, e);
-  // };
 
   render() {
     return (
@@ -56,7 +40,7 @@ class PostContainer extends React.Component {
                     <img src={post.imageUrl} alt='main post' />
                   </div>
                   <div className='likes-container'>
-                    <Likes addLike={this.addLike} likes={this.state.likes} />
+                    <Likes addLike={this.addLike} likes={post.likes} />
                   </div>
                   <CommentSection
                     comments={this.props.postsInState.comments}
@@ -80,7 +64,7 @@ class PostContainer extends React.Component {
                     <img src={post.imageUrl} alt='main post' />
                   </div>
                   <div className='likes-container'>
-                    <Likes addLike={this.addLike} likes={this.state.likes} />
+                    <Likes addLike={this.addLike} likes={post.likes} />
                   </div>
                   <CommentSection
                     comments={this.props.postsInState.comments}
