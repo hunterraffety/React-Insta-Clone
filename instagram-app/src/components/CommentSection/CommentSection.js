@@ -1,6 +1,7 @@
 // react
 import React from 'react';
 import PropTypes from 'prop-types';
+import Username from '../../Styles/Reusables/Username';
 
 // styles
 import './CommentSection.scss';
@@ -40,7 +41,7 @@ class CommentSection extends React.Component {
       <div className='comment-section-container'>
         {this.state.comments.map(commentsOnPost => (
           <div className='comment-container' key={Math.random()}>
-            <span className='comment-username'>@{commentsOnPost.username}</span>
+            <Username inline>@{commentsOnPost.username}</Username>
             <span className='comment-text'>{commentsOnPost.text}</span>
           </div>
         ))}

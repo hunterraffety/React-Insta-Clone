@@ -1,6 +1,7 @@
 // react
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 // components
 import CommentSection from '../CommentSection/CommentSection';
@@ -8,6 +9,9 @@ import Likes from '../Likes/Likes';
 
 // styles
 import './PostContainer.scss';
+
+// styled components
+import Username from '../../Styles/Reusables/Username';
 
 class PostContainer extends React.Component {
   render() {
@@ -23,7 +27,7 @@ class PostContainer extends React.Component {
                       className='post-thumbnail'
                       alt='profile pic'
                     />
-                    <p className='post-username'>{post.username}</p>
+                    <Username bolder>{post.username}</Username>
                   </div>
                   <div className='post-image'>
                     <img src={post.imageUrl} alt='main post' />
