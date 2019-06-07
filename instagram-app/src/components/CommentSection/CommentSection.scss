@@ -1,0 +1,48 @@
+.comment-section-container {
+  padding: 0rem 1rem 1rem 1rem;
+  font-size: 1.4rem;
+  max-width: 100%;
+  .comment-container {
+    margin: 0.5rem 0rem;
+    .comment-username {
+      font-weight: 700;
+      padding: 1rem 0;
+    }
+    .comment-text {
+      padding-left: 1rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+.form {
+  a {
+    color: black;
+  }
+  form {
+    border-top: 1px solid #efefef;
+    width: 100%;
+    input {
+      margin: 1.5rem 0rem 0.5rem 0rem;
+      width: 60%;
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 1.6rem;
+      display: block;
+      &:focus {
+        outline: none;
+        border-radius: 5px;
+      }
+    }
+    button {
+      display: block;
+      margin: 0.5rem 0.8rem;
+      background: none;
+      border-radius: 5px;
+      padding: 1rem;
+      border: 1px solid #efefef;
+    }
+    a {
+      padding: 0 1.5rem;
+    }
+  }
+}

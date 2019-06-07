@@ -1,0 +1,67 @@
+.post-container-container {
+  .test {
+    margin: 3rem auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0rem;
+    background: #ffffff;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+  }
+  img {
+    max-width: 100%;
+  }
+
+  .container-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #e6f4ff;
+    img {
+      width: 5%;
+      margin: 1rem;
+    }
+    p {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+  }
+  .post-image {
+    img {
+      border-radius: 0px 0px 7px 7px;
+    }
+  }
+  .post-add-comment {
+    border-top: 1px solid #e0e0e0;
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin: 1rem;
+  }
+  .post-reaction-container {
+    padding: 1rem 0 0 1rem;
+    i {
+      padding: 0.5rem 0.5rem 0 0.5rem;
+      font-size: 2.6rem;
+      cursor: pointer;
+    }
+  }
+  .post-timestamp {
+    padding: 0 0 0.75rem 1.3rem;
+    color: gray;
+    margin-bottom: 1.5rem;
+  }
+  .likes-container {
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  input {
+    margin-left: 1rem;
+    border: none;
+    width: 50%;
+    &:focus {
+      outline: none;
+    }
+  }
+}

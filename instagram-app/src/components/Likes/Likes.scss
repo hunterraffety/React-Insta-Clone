@@ -1,0 +1,14 @@
+.post-reaction-container {
+  .fa-heart {
+    &:hover {
+      color: red;
+    }
+  }
+  .likes-display {
+    padding: 1rem;
+    font-size: 1.4rem;
+    h1 {
+      font-weight: 700;
+    }
+  }
+}
