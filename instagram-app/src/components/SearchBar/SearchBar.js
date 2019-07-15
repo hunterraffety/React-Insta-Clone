@@ -10,12 +10,17 @@ import styled from 'styled-components';
 const Header = styled.header`
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background: #e6f4ff;
   justify-content: center;
   border-bottom: 1px solid #d1dce8;
 `;
 
 const LogoHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   nav {
     padding-bottom: 1rem;
     width: 55%;
@@ -79,15 +84,7 @@ class SearchBar extends React.Component {
                 />
               </div>
             </div>
-            <div className='search-input-container'>
-              <input
-                className='search-input'
-                name='search'
-                onChange={this.props.searchFilter}
-                placeholder='Search'
-                type='text'
-              />
-            </div>
+
             <div className='search-actions-container'>
               <i className='far fa-compass' />
               <i className='far fa-heart' />
