@@ -31,8 +31,14 @@ class LoginPage extends React.Component {
         <div className='form-container'>
           <form className='login-form' onSubmit={this.submitLogin}>
             <label htmlFor='username'>Username</label>
-            <input type='text' name='username' />
-            <label htmlFor='password'>Password</label>
+            <input
+              type='text'
+              name='username'
+              placeholder='use "test" for login and password'
+            />
+            <label htmlFor='password' placeholder='use "test"'>
+              Password
+            </label>
             <input type='password' name='password' />
             <button onSubmit={this.submitLogin}>Log In</button>
           </form>

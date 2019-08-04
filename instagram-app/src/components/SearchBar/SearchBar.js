@@ -12,7 +12,7 @@ const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e6f4ff;
+  background: #8ad8ff;
   justify-content: center;
   border-bottom: 1px solid #d1dce8;
 `;
